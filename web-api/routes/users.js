@@ -1,9 +1,9 @@
 var express = require('express');
 var router = express.Router();
-const UsersController = require('../users/controller');
+const UsersController = require('../login/model');
 
 /* GET users listing. */
-router.get('/', async(req, res, next)=> {
+router.get('/login', async(req, res, next)=> {
 try {
   const {body} = req;
   const user = await UsersController.login(body);
@@ -13,6 +13,14 @@ try {
   return res.status(500).json({message:error.message})
 }
 });
-//hahaahighjkwfwghfk
-fdgkdfkgjfg
+router.post('/register',async(req,res,next)=>{
+  try {
+    
+  } catch (error) {
+    console.log("Loi:",error);
+    return res.status(500).json({message:error.message});
+  }
+})
+
+
 module.exports = router;
